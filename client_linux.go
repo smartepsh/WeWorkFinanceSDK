@@ -11,6 +11,7 @@ import "C"
 import (
 	"encoding/json"
 	"unsafe"
+	"fmt"
 )
 
 type SdkClient struct {
@@ -107,7 +108,9 @@ func (s *SdkClient) DecryptData(encryptRandomKey string, encryptMsg string) (msg
 	if err != nil {
 		return msg, err
 	}
+	fmt.Println(encryptKey)
 	encryptKeyC := C.CString(string(encryptKey))
+	fmt.Println(encryptKeyC)
 	encryptMsgC := C.CString(encryptMsg)
 	msgSlice := C.NewSlice()
 	defer func() {
