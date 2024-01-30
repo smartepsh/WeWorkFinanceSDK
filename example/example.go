@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/NICEXAI/WeWorkFinanceSDK"
+	"github.com/smartepsh/WeWorkFinanceSDK"
 	"io/ioutil"
 	"os"
 	"path"
