@@ -104,6 +104,7 @@ func (s *SdkClient) GetChatData(seq uint64, limit uint64, proxy string, passwd s
 *      !=0 - 失败
  */
 func (s *SdkClient) DecryptData(encryptRandomKey string, encryptMsg string) (msg ChatMessage, err error) {
+	fmt.Println("Begin to decrypt data")
 	encryptKey, err := RSADecryptBase64(s.privateKey, encryptRandomKey)
 	if err != nil {
 		return msg, err
