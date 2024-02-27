@@ -19,7 +19,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 `
 
 	//初始化客户端
-	client, err := WeWorkFinanceSDK.NewClient(corpID, corpSecret, rsaPrivateKey)
+	client, err := WeWorkFinanceSDK.NewClient(corpID, corpSecret)
 	if err != nil {
 		fmt.Printf("SDK 初始化失败：%v \n", err)
 		return
@@ -34,7 +34,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 	for _, chatData := range chatDataList {
 		//消息解密
-		chatInfo, err := client.DecryptData(chatData.EncryptRandomKey, chatData.EncryptChatMsg)
+		chatInfo, err := client.DecryptData(chatData.EncryptRandomKey, chatData.EncryptChatMsg, rsaPrivateKey)
 		if err != nil {
 			fmt.Printf("消息解密失败：%v \n", err)
 			return

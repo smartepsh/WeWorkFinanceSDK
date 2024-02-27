@@ -19,6 +19,6 @@ import (
 //      0   - 成功
 //  	!=0 - 失败
 //
-func NewClient(corpId string, corpSecret string, rsaPrivateKey string) (Client, error) {
+func NewClient(corpId string, corpSecret string) (Client, error) {
 	return nil, fmt.Errorf("该 SDK 目前只支持 Linux 平台运行，请在 Linux 环境下安装并执行")
 }

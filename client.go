@@ -18,13 +18,14 @@ type Client interface {
 	//
 	// @param [in]  encrypt_key, getchatdata返回的encrypt_random_key,使用企业自持对应版本秘钥RSA解密后的内容
 	// @param [in]  encrypt_msg, getchatdata返回的encrypt_chat_msg
+	// @param [in]  private_key, 后台设置使用的私钥
 	// @param [out] msg, 解密的消息明文
 	//
 	// @return 返回是否调用成功
 	//      0   - 成功
 	//  	!=0 - 失败
 	//
-	DecryptData(encryptRandomKey string, encryptMsg string) (msg ChatMessage, err error)
+	DecryptData(encryptRandomKey string, encryptMsg string, privateKey string) (msg ChatMessage, err error)
 
 	// GetMediaData 拉取媒体消息函数
 	//
